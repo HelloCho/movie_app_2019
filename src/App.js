@@ -43,7 +43,7 @@ function Food({name, picture, rating}) {
 }
 Food.propTypes = {
   name : PropTypes.string.isRequired,
-  foodImage : PropTypes.string.isRequired,
+  picture : PropTypes.string.isRequired,
   rating : PropTypes.number.isRequired
 }
 function renderFood(dish) {
