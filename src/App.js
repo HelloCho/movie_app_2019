@@ -34,11 +34,11 @@ const foodList = [
       image:"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/3/22/0/FNCC_bobby-flay-salmon-brown-sugar-mustard_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382541357316.jpeg"},
 ]
 
-function Food({name, foodImage, rating}) {
+function Food({name, picture, rating}) {
   return <div>
     <h1>I like {name}</h1>
     <p>{rating} / 5.0</p>
-    <img src={foodImage} width='500' height='500' alt={name}/>
+    <img src={picture} width='500' height='500' alt={name}/>
   </div>;
 }
 Food.propTypes = {
@@ -47,7 +47,7 @@ Food.propTypes = {
   rating : PropTypes.number.isRequired
 }
 function renderFood(dish) {
-  return <Food key={dish.id} name={dish.name} foodImage={dish.image} rating={dish.rating} />;
+  return <Food key={dish.id} name={dish.name} picture={dish.image} rating={dish.rating} />;
 }
 
 
@@ -55,7 +55,7 @@ function App() {
   return (<div className="App">
     <h1>Hello!!</h1>
     {/* {foodList.map(food => {
-      return <Food key={food.id} name={food.name} foodImage={food.image} />;
+      return <Food key={food.id} name={food.name} picture={food.image} />;
     })}
     <hr/> */}
     {foodList.map(renderFood)}
