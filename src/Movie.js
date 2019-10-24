@@ -1,25 +1,16 @@
 import React from 'react';
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
-class Movie extends React.Component {
-    state = {
-        isLoading : true,
-        book : ""
-    };
+function Movie({id, year, title, summary, poster}) {
+    return <h5>{title}</h5>
+}
 
-    componentDidMount() {
-        setTimeout(() => {
-            this.setState({isLoading : false, book: "Hello World"});
-        }, 6000);
-    };
-
-    render(){
-        const {isLoading} = this.state.isLoading;
-        const {book} = this.state.book;
-        return (<div>
-            {isLoading ? "Loading..." : "We are reay!"}
-        </div>);
-    };
+Movie.propTypes = {
+    id: PropTypes.number.isRequired,
+    year: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired
 }
 
 export default Movie;
